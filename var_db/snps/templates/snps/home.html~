@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+{% load staticfiles %}
+	<center><h1><img src="{% static "images/logo.jpg" %}" width=350px /></h1></center>
+        <center><h1><strong> Welcome to the Badass Variant Database </strong></h1><center>
+</div>
+{% endblock %}
+

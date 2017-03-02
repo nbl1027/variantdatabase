@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+{% load staticfiles %}
+{% load widget_tweaks %}
+<center><h1><img src="{% static "images/logo.jpg" %}" width=350px /></h1></center>
+<center><h1><strong>Result Upload</strong></h1><center>
+    <center><form role="form" method="post" enctype="multipart/form-data">
+  		{% csrf_token %}
+		{% render_field form.chromosome %}
+                {% render_field form.gene %}
+                {% render_field form.results %}
+  		<input type="submit" value="Upload" /><center>
+    </form>
+
+</div>
+{% endblock %}

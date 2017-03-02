@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+<center>
+{% load staticfiles %}
+<center><h1><span class="glyphicon glyphicon-refresh-animate"><img src="{% static "images/logo.jpg" %}" width=350px /></span></h1></center>
+<h1><strong> Variants</strong></h1>
+<p>BOOOOOOOOOOOOOOOOO</p>
+{% for variant in variants %}
+<div>
+    <p> Gene: {{ variant.gene }} </p>
+{% endfor %}
+</center>
+</div>
+{% endblock %}

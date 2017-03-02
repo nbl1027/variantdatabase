@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+<center>
+<h1><span class="glyphicon glyphicon-ok"></span><strong> Congratulations!</strong></h1>
+<h1>Your data has uploaded successfully</h1>
+{% load staticfiles %}
+<center><h1><span class="glyphicon glyphicon-refresh-animate"><img src="{% static "images/logo.jpg" %}" width=350px /></span></h1></center>
+</center>
+</div>
+{% endblock %}
