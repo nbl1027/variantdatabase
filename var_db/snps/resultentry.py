@@ -1,4 +1,4 @@
 
 def resultentry(results):
 	if results:
-		print 'BOOOOOYAHHHHH'
+		print('BOOOOOYAHHHHH')

@@ -1,6 +1,21 @@
 <html>
     {% load staticfiles %}
     <head>
+	<link rel="shortcut icon" href="/favicon.ico}" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+    <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.13/css/dataTables.bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="{% static 'css/snps.css' %}">
@@ -9,8 +24,7 @@
     </head>
 <body>
 <nav class="navbar navbar-default navbar-fixed-top">
-<div class="container">
-<div class="navbar-header">
+	<div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
                     aria-expanded="false" aria-controls="navbar">
@@ -22,6 +36,32 @@
             <a class="navbar-brand" href="{% url 'home' %}"><span class="glyphicon glyphicon-th-list"></span>
                 Badass DB</a>
         </div>
+		<div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav list-unstyled list-inline">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Upload</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{% url 'upload_file' %}">File</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Institution</a></li>
+						<li><a href="#">Patient</a></li>
+						<li><a href="#">Sample</a></li>
+						<li><a href="#">IVariant</a></li>
+                    </ul>
+                </li>
+				<li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">Search</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Institution</a></li>
+						<li><a href="#">Patient</a></li>
+						<li><a href="#">Sample</a></li>
+						<li><a href="#">Variant</a></li>
+                    </ul>
+                </li>
+			</ul>
+		</div>
     </div>
 </nav>
 
