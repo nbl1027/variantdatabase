@@ -64,6 +64,19 @@ def upload_file(request):
         form = UploadFileForm()
 	return render(request, 'upload.html', {'form':form})
 
+def patient_search(request):
+    if request.method == 'POST':
+        form = PatientSearchForm(request.POST, request.FILES)
+        if form.is_valid():
+            print 'BAWBAG'
+            return render(request,'snps/success.html')
+        else:
+            form = PatientSearchForm()
+            return render_to_response('snps/success.html')
+    else:
+        form = PatientSearchForm()
+	return render(request, 'upload.html', {'form':form})
+
 
    
 

@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container">
+{% load staticfiles %}
+<center><h1><img src="{% static "images/logo.jpg" %}" width=350px /></h1></center>
+<center><h1><strong>Result Upload</strong></h1><center>
+    <center><form role="form" method="post" enctype="multipart/form-data">
+  		{% csrf_token %}
+ 		{{ form.as_p }}
+  		<input type="submit" value="Upload" /><center>
+    </form>
+
+</div>
+{% endblock %}

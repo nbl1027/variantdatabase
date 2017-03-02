@@ -5,3 +5,7 @@ class UploadFileForm(forms.Form):
     chromosome = forms.IntegerField()
     gene = forms.CharField()
     results = forms.FileField()
+
+class PatientSearchForm(forms.Form):
+    FirstName = forms.CharField()
+    SecondName = forms.CharField()
