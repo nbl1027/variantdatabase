@@ -25,4 +25,9 @@ urlpatterns = [
     url(r'^success/', views.success, name = 'success'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^patient_search/', views.patient_search, name='patient_search'),
+    url(r'^patientresult/', views.patient_search, name='patientresult'),
+    url(r'^sample_search/', views.sample_search, name='sample_search'),
+    url(r'^ins_search/', views.ins_search, name='ins_search'),
+    #url(r'^sampleresult/', views.sampleresult, name='sampleresult'),
 ]
+

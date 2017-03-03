@@ -16,6 +16,9 @@ def home(request):
 def success(request):
     return render_to_response('snps/success.html')
 
+#def patientresult(request):
+ #   return render(request, 'snps/patientresult.html', {'nameresults':nameresults})
+
 def variants(request):
     variants = Variant.objects.all()
     return render(request, 'snps/variants.html', {'variants':variants})
@@ -63,16 +66,60 @@ def upload_file(request):
 
 def patient_search(request):
     if request.method == 'POST':
-        form = PatientSearchForm(request.POST, request.FILES)
+        form = PatientSearchForm(request.POST)
         if form.is_valid():
-            print 'BAWBAG'
-            return render(request,'snps/success.html')
-        else:
-            form = PatientSearchForm()
-            return render_to_response('snps/success.html')
+            firstquery = form.cleaned_data['FirstName']
+            secondquery = form.cleaned_data['SecondName']
+	    if not firstquery: 
+	   	 filterargs = {'secondname' : secondquery}
+            elif not secondquery: 
+	   	 filterargs = {'firstname' : firstquery}
+            else:
+                 filterargs = {'firstname' : firstquery, 'secondname' : secondquery}
+            nameresults = Patient.objects.filter(**filterargs)
+            return render(request,'snps/patientresult.html', {'nameresults':nameresults})
+        #else:
+         #   form = PatientSearchForm()
+          #  return render_to_response('snps/success.html')
     else:
         form = PatientSearchForm()
-	return render(request, 'upload.html', {'form':form})
+	return render(request, 'patient_search.html', {'form':form})
+
+def sample_search(request):
+    if request.method == 'POST':
+        form = SampleSearchForm(request.POST)
+        if form.is_valid():
+            firstquery = form.cleaned_data['Sequencer']
+            secondquery = form.cleaned_data['SampleType']
+	    if not firstquery: 
+	   	 filterargs = {'sampletype' : secondquery}
+            elif not secondquery: 
+	   	 filterargs = {'sequencer' : firstquery}
+            else:
+                 filterargs = {'sequencer' : firstquery, 'sampletype' : secondquery}
+            nameresults = Samples.objects.filter(**filterargs)
+            return render(request,'snps/sampleresult.html', {'nameresults':nameresults})
+        #else:
+         #   form = PatientSearchForm()
+          #  return render_to_response('snps/success.html')
+    else:
+        form = SampleSearchForm()
+	return render(request, 'sample_search.html', {'form':form})
+
+def ins_search(request):
+    if request.method == 'POST':
+        form = InsSearchForm(request.POST)
+        if form.is_valid():
+            firstquery = form.cleaned_data['Institution']
+            filterargs = {'name' : firstquery}
+            nameresults = Institution.objects.filter(**filterargs)
+            return render(request,'snps/insresult.html', {'nameresults':nameresults})
+        #else:
+         #   form = PatientSearchForm()
+          #  return render_to_response('snps/success.html')
+    else:
+        form = InsSearchForm()
+	return render(request, 'ins_search.html', {'form':form})
 
 
    

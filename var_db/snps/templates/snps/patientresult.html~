@@ -6,13 +6,23 @@
 <center><h1><span class="glyphicon glyphicon-refresh-animate"><img src="{% static "images/logo.jpg" %}" width=350px /></span></h1></center>
 <h1><strong> Patient Search Results </strong></h1>
 
-{% for result in patientresult %}
-<div>
-    <p> First Name: {{ result.firstname }} </p>
-    <p> Second Name: {{ result.secondname }} </p>
-    <p> Age: {{ result.age }} </p>
-</div>
+<table>
+<tr>
+  <th>First Name</th>
+  <th>Second Name</th>
+  <th>Age</th>
+</tr>
+{% for result in nameresults %}
+<tr>
+  <td width='35%'>{{ result.firstname }}</td>
+  <td width='45%'>{{ result.secondname }}</td>
+  <td width='20%'>{{ result.age }}</td>
+</tr>
 {% endfor %}
+</table>
+
 </center>
 </div>
 {% endblock %}
+
+

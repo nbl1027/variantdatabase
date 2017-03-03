@@ -35,7 +35,7 @@ class Patient(models.Model):
     secondname = models.CharField(max_length = 50) 
     age = models.IntegerField(null = True)
     notes = models.CharField(max_length = 1000)
-    institutionid = models.IntegerField(null = True) 
+    institutionid = models.ForeignKey(Institution) 
     
     def __str__(self):
         return "%s %s %s %s" % (self.firstname, self.secondname, self.age, self.notes)
@@ -44,7 +44,7 @@ class Patient(models.Model):
 
 class Samples(models.Model):
     sampleid = models.AutoField(primary_key = True)
-    patientid = models.ForeignKey(Patient)
+    models.ForeignKey(Patient) 
     sequencer = models.CharField(max_length = 30)
     sampletype = models.CharField(max_length = 30)
    
@@ -54,7 +54,7 @@ class Samples(models.Model):
 
 class Sample2Variant(models.Model):
     sample2variantid = models.AutoField(primary_key = True)
-    variantid = models.ForeignKey(Variant)
-    sampleid = models.ForeignKey(Samples)
+    variantid = models.ForeignKey(Variant) 
+    sampleid = models.ForeignKey(Samples) 
 
     

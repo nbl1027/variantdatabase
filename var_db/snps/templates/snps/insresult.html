@@ -4,13 +4,11 @@
 <center>
 {% load staticfiles %}
 <center><h1><span class="glyphicon glyphicon-refresh-animate"><img src="{% static "images/logo.jpg" %}" width=350px /></span></h1></center>
-<h1><strong> Patient Search Results </strong></h1>
+<h1><strong> Institution Search Results </strong></h1>
 
-{% for result in patientresult %}
+{% for result in nameresults %}
 <div>
-    <p> First Name: {{ result.firstname }} </p>
-    <p> Second Name: {{ result.secondname }} </p>
-    <p> Age: {{ result.age }} </p>
+    <p> Institution: {{ result.name }} </p>
 </div>
 {% endfor %}
 </center>
