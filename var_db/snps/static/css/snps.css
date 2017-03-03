@@ -45,3 +45,10 @@ dropup .caret,
     left: 0;
   }
 }
+
+.form-upload {
+      max-width: 500px;
+  padding: 10px 35px 35px;
+  margin: 0 auto;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}

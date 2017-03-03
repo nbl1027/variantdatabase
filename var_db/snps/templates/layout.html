@@ -12,13 +12,12 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
     <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.13/css/dataTables.bootstrap.min.css">
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="{% static 'css/snps.css' %}">
+    <link rel="stylesheet" href="/static/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/snps.css">
 
          <title> Badass SNPdatabase </title>
     </head>
@@ -37,22 +36,32 @@
                 Badass DB</a>
         </div>
 		<div id="navbar" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav list-unstyled list-inline">
+            <ul class="nav navbar-nav">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                       aria-expanded="false">Upload</a>
+                       aria-expanded="false">Upload <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="{% url 'upload_file' %}">File</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="#">Institution</a></li>
+                        <li><a href="{% url 'create_inst' %}">Institution</a></li>
 						<li><a href="#">Patient</a></li>
 						<li><a href="#">Sample</a></li>
-						<li><a href="#">IVariant</a></li>
+						<li><a href="#">Variant</a></li>
                     </ul>
                 </li>
 				<li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                       aria-expanded="false">Search</a>
+                       aria-expanded="false">Search <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Institution</a></li>
+						<li><a href="{% url 'patient_search' %}">Patient</a></li>
+						<li><a href="#">Sample</a></li>
+						<li><a href="#">Variant</a></li>
+                    </ul>
+                </li>
+				<li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                       aria-expanded="false">View <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="#">Institution</a></li>
 						<li><a href="#">Patient</a></li>

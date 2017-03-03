@@ -1,0 +1,35 @@
+{% extends "upload_basic.html" %}
+{% block form-content %}
+
+		<br/>
+		<div class="form-group">
+ 		{{ form.name.label }}
+		<br/>
+		{{ form.name }}
+		</div>
+		<div class="form-group">
+ 		{{ form.location.label }}
+		<br/>
+		{{ form.location }}
+		</div>
+		<br/>
+		<div class="form-group fileUpload">
+ 		{{ form.contactname.label }}
+		<br/>
+		{{ form.contactname }}
+		</div>
+		<div class="form-group fileUpload">
+ 		{{ form.contactemail.label }}
+		<br/>
+		{{ form.contactemail }}
+		</div>
+		<div class="form-group fileUpload">
+ 		{{ form.contactnumber.label }}
+		<br/>
+		{{ form.contactnumber }}
+		</div>
+		<br/>
+  		<input type="submit" value="Upload" class="btn btn-success pull-right"/>
+		<br/>
+
+{% endblock %}

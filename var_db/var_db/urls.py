@@ -25,4 +25,5 @@ urlpatterns = [
     url(r'^success/', views.success, name = 'success'),
     url(r'^admin/', include(admin.site.urls)),
     url(r'^patient_search/', views.patient_search, name='patient_search'),
+	url(r'^upload_inst/', views.create_inst, name='create_inst'),
 ]
