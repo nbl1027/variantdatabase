@@ -18,7 +18,7 @@ class Variant(models.Model):
         return "%s %s %s %s %s" % (self.chromosome, self.cdna, self.protein, self.gdna, self.gene)
 
 class Institution(models.Model):
-    institutionid = models.AutoField(primary_key = True)
+    institutionid = models.AutoField(primary_key = True, null = False)
     name = models.CharField(max_length = 50)
     location = models.CharField(max_length = 50)
     contactname = models.CharField(max_length = 50)

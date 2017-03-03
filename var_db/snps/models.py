@@ -44,7 +44,7 @@ class Patient(models.Model):
 
 class Samples(models.Model):
     sampleid = models.AutoField(primary_key = True)
-    models.ForeignKey(Patient) 
+    patientid = models.ForeignKey(Patient) 
     sequencer = models.CharField(max_length = 30)
     sampletype = models.CharField(max_length = 30)
    

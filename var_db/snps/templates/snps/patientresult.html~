@@ -11,12 +11,20 @@
   <th>First Name</th>
   <th>Second Name</th>
   <th>Age</th>
+  <th>Institution</th>
+  <th>Gene</th>
+  <th>Variant</th>
 </tr>
 {% for result in nameresults %}
 <tr>
   <td width='35%'>{{ result.firstname }}</td>
   <td width='45%'>{{ result.secondname }}</td>
   <td width='20%'>{{ result.age }}</td>
+  <td width='20%'>{{ result.Institution.name }}</td>
+  <td width='20%'>{{ result.Variant.Gene }}</td>
+  <td width='20%'>{{ result.Variant.cdna }}</td>
+   
+
 </tr>
 {% endfor %}
 </table>
