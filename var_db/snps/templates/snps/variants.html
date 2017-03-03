@@ -5,13 +5,23 @@
 {% load staticfiles %}
 <center><h1><span class="glyphicon glyphicon-refresh-animate"><img src="{% static "images/logo.jpg" %}" width=350px /></span></h1></center>
 <h1><strong> Variants</strong></h1>
-
+<br/>
+<table class='table table-striped'>
+<thead>
+  <th>Gene</th>
+  <th>Chromosome</th>
+  <th>cDNA</th>
+  <th>gDNA</th>
+  <th>Protein</th>
+</thead>
 {% for variant in variants %}
-<div>
-    <p> Chromosome: {{ variant.chromosome }} </p>
-    <p> Gene: {{ variant.gene }} </p>
-    <p> Variant: {{ variant.cdna}} </p>
-</div>
+<tr>
+    <td> {{ variant.variantid.gene }} </td>
+    <td> {{ variant.variantid.chromosome }} </td>
+    <td> {{ variant.variantid.cdna}} </td>
+    <td> {{ variant.variantid.gdna}} </td>
+    <td> {{ variant.variantid.protein}} </td>
+</tr>
 {% endfor %}
 </center>
 </div>

@@ -20,7 +20,13 @@ def success(request):
  #   return render(request, 'snps/patientresult.html', {'nameresults':nameresults})
 
 def variants(request):
-    variants = Variant.objects.all()
+    patientid = request.GET.get('id')
+    if patientid: 
+        sampleid = Samples.objects.filter(**{'patientid' : patientid})
+        variants = Sample2Variant.objects.filter(**{'sampleid' : sampleid})
+        print sampleid
+    else:
+            variants = Variant.objects.all()
     return render(request, 'snps/variants.html', {'variants':variants})
 
 def handle_uploaded_file(f, chrom, gene):
