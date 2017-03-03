@@ -18,7 +18,7 @@ def success(request):
 
 def variants(request):
     variants = Variant.objects.all()
-    return render_to_response('snps/variants.html')
+    return render(request, 'snps/variants.html', {'variants':variants})
 
 def handle_uploaded_file(f, chrom, gene):
 	variants = []
@@ -59,6 +59,19 @@ def upload_file(request):
 			return render_to_response('snps/success.html')
 	else:
 		form = UploadFileForm()
+	return render(request, 'upload.html', {'form':form})
+
+def patient_search(request):
+    if request.method == 'POST':
+        form = PatientSearchForm(request.POST, request.FILES)
+        if form.is_valid():
+            print 'BAWBAG'
+            return render(request,'snps/success.html')
+        else:
+            form = PatientSearchForm()
+            return render_to_response('snps/success.html')
+    else:
+        form = PatientSearchForm()
 	return render(request, 'upload.html', {'form':form})
 
 

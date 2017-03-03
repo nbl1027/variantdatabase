@@ -8,7 +8,9 @@
 
 {% for variant in variants %}
 <div>
+    <p> Chromosome: {{ variant.chromosome }} </p>
     <p> Gene: {{ variant.gene }} </p>
+    <p> Variant: {{ variant.cdna}} </p>
 </div>
 {% endfor %}
 </center>

@@ -17,8 +17,8 @@ def success(request):
     return render_to_response('snps/success.html')
 
 def variants(request):
-    variants = Variants.objects.all()
-    return render_to_response('snps/variants.html')
+    variants = Variant.objects.all()
+    return render(request, 'snps/variants.html', {'variants':variants})
 
 def handle_uploaded_file(f, chrom, gene):
     variants = []
